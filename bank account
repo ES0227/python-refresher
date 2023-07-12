@@ -1,0 +1,36 @@
+class account(object):
+    def _init_ (self, balance, name, number):
+        self.balance = balance
+        self.name = name
+        self.number = number
+        
+        def withdrawal(self, amount):
+            if amount > self.balance:
+                return "Too much money being withdrawn"
+            else:
+                self.balance -= amount
+                print (f"you have {self.balance} dollars left")
+
+        def deposit(self, amount):
+            if amount < 0:
+                print ("Invalid deposit amount")
+            else:
+                self.balance += amount
+                print (f"you have {self.balance}")
+            
+        def moneyAmount(self):
+            print (self.balance)
+
+    def testDeposit(self):
+        self.assertEqual(self.deposit(15), 75)
+
+    def testWithdrawal(self):
+        self.assertEqual(self.withdrawal(15), 35)
+
+if __name__ == "__main__":
+    p1 = account(1000, "vern", 11111)
+
+class Account:
+    def _init_(name:str, number:int, balance: int or float = 0):
+    account = bank.account("erin", 1000.0, 1060)
+    self.assertEqual{account.number, }
