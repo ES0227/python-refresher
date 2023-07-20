@@ -169,7 +169,6 @@ def simulate_auv2_motion(
     T, alpha, L, l, mass=100, intertia=100, dt=0.1, t_final=10, x0=0, y0=0, theta0=0
 ):
     t = np.arange(0, t_final, dt)
-
     a = np.tile(np.zeros_like(t), (2, 1))
 
     v = np.tile(np.zeros_like(t), (2, 1))
