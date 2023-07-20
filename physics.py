@@ -166,7 +166,7 @@ def calculate_auv2_angular_acceleration(T, alpha, L, l, inertia=100):
 
 
 def simulate_auv2_motion(
-    T, alpha, L, l, mass=100, intertia=100, dt=0.1, t_final=10, x0=0, y0=0, theta0=0
+    T, alpha, L, l, mass=100, intertia=100, dt=0.1, t_final=500, x0=0, y0=0, theta0=0
 ):
     t = np.arange(0, t_final, dt)
     a = np.tile(np.zeros_like(t), (2, 1))
@@ -204,19 +204,21 @@ def simulate_auv2_motion(
 
 def plot_auv2_motion(tup):
     plt.plot(
-        tup[0], tup[1], label="x position"
+        tup[1], tup[2], label="x position"
     )  # tuple is short and convenient but may be hard to understand at first sight
-    plt.plot(tup[0], tup[2], label="y position")
-    # plt.plot(tup[0], tup[3], label="theta angle")
+    #plt.plot(tup[1], tup[2], label="y position")
+    #plt.plot(tup[0], tup[3], label="theta angle")
 
     """plt.plot(tuple[0], tuple[4], label="velocity")
     plt.plot(tuple[0], tuple[5], label="angular velocity")
     plt.plot(tuple[0], tuple[6], label="acceleration")"""
-    print(tup[1])
-    print(tup[2])
+    #print(tup[1])
+    #print(tup[2])
 
-    plt.xlabel("Time (s)")
-    plt.ylabel("X_Position (m), Y_Position (m), theta (rad)")
+    plt.xlabel("X_Position (m)")
+    plt.ylabel("Y_Position (m)")
+    plt.xlim([-200, 200])
+    plt.ylim([-200, 200])
     plt.legend()
     plt.show()
 
